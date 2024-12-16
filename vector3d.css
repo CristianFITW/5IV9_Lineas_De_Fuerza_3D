@@ -1,0 +1,166 @@
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: 'Poppins', sans-serif;
+        overflow: hidden;
+        background-color: #f7f8fc; /* Fondo suave */
+      }
+      
+      #glcanvas {
+        height: 100%;
+        width: 100%;
+      }
+      
+      .canvas {
+        background-color: #e8eaed; /* Fondo claro */
+        height: calc(100vh - 70px); /* Ajuste para la barra */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: 4px solid #1f2937; /* Línea de separación */
+      }
+      
+      .sidebar {
+        width: 100%; /* Barra horizontal completa */
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 70px; /* Altura de la barra */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        background: linear-gradient(90deg, #6a11cb, #2575fc); /* Gradiente moderno */
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Sombra suave */
+        z-index: 10;
+      }
+      
+      .sidebar select,
+      .sidebar button,
+      .sidebar input[type="checkbox"],
+      .sidebar span {
+        font-size: 14px;
+        font-weight: 500;
+      }
+      
+      .sidebar select {
+        padding: 8px 12px;
+        border: none;
+        border-radius: 25px;
+        background: #f9f9f9; /* Fondo claro */
+        color: #333; /* Texto oscuro */
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      
+      .sidebar select:hover {
+        background: #e2e2e2; /* Fondo al pasar el cursor */
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15); /* Sombra al hover */
+      }
+      
+      .sidebar button {
+        padding: 10px 20px;
+        background: #f77f00;
+        border: none;
+        border-radius: 25px;
+        color: #ffffff;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.2s ease;
+      }
+      
+      .sidebar button:hover {
+        background: #d36500;
+        transform: scale(1.08); /* Ligera ampliación */
+        box-shadow: 0px 3px 10px rgba(211, 101, 0, 0.4); /* Efecto de elevación */
+      }
+      
+      .sidebar input[type="checkbox"] {
+        accent-color: #f77f00; /* Personaliza color de los checkboxes */
+        width: 20px;
+        height: 20px;
+      }
+      
+      #stoppedCheck,
+      #reverseCheck,
+      #resetButton,
+      #kickButton {
+        display: none;
+      }
+      
+      .slider {
+        width: 150px;
+      }
+      
+      .sidebar span {
+        color: #f7f8fc; /* Texto suave */
+        margin-right: 15px;
+      }
+      
+      .sidebar div {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      
+      #status {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 30px;
+        font-size: 14px;
+        text-align: center;
+        background-color: #1f2937; /* Fondo oscuro */
+        color: #e8eaed; /* Texto claro */
+      }
+      
+      #axesLabelContainer {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        overflow: hidden;
+        pointer-events: none;
+        user-select: none;
+        color: #333;
+      }
+      
+      .floating-div {
+        position: absolute;
+      }
+      
+      /* Efectos adicionales */
+      
+      .sidebar select:focus {
+        outline: none;
+        border: 2px solid #f77f00;
+      }
+      
+      .sidebar button:focus {
+        outline: none;
+        box-shadow: 0px 0px 12px rgba(247, 127, 0, 0.6);
+      }
+      
+      /* Añadir animación suave a la barra */
+      .sidebar {
+        animation: fadeIn 0.8s ease-out;
+      }
+      
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
