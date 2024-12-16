@@ -162,7 +162,7 @@ function updateValues() {
     info.innerHTML = "";
     if (mousePoint) {
       const units = BUILD_CASE_EMV(" m", " m", "");
-      info.innerHTML = "Point: (" + round(mousePoint[0]) + ", " + round(mousePoint[1]) + ", " + round(mousePoint[2]) + ")" + units + "<br>";
+      info.innerHTML = "Posición: (" + round(mousePoint[0]) + ", " + round(mousePoint[1]) + ", " + round(mousePoint[2]) + ")" + units + "<br>";
       var fvec = [];
       getPot = false;
       curfunc.getField(fvec, mousePoint);
@@ -182,14 +182,14 @@ function updateValues() {
         getPot = true;
         curfunc.getField(fvec, mousePoint);
         const unitsP = BUILD_CASE_EMV(" V", " V", "");
-        info.innerHTML += "Potential = " + round(fvec[0]) + unitsP + "<br><p>&nbsp;</p>";
+        info.innerHTML += "Potencial = " + round(fvec[0]) + unitsP + "<br><p>&nbsp;</p>";
       }
       getPot = (dispChooser.value == "equip");
     }
     if (BUILD_CASE_EMV(true, true, false))
       info.innerHTML += curfunc.getInfo();
     if (sliceChooser.selectedIndex != 0) {
-      info.innerHTML += "Slice: " + ("_xyz".substring(sliceChooser.selectedIndex, sliceChooser.selectedIndex+1)) + " = " + round(sliceval);
+      info.innerHTML += "Posición en: " + ("_xyz".substring(sliceChooser.selectedIndex, sliceChooser.selectedIndex+1)) + " = " + round(sliceval);
     }
 }
 
