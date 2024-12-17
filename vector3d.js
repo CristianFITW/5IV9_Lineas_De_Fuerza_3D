@@ -1253,7 +1253,7 @@ function dispChooserChanged() {
     showDiv("partCountDiv", true);
   }
   var vecDensityLabel = document.getElementById("vecDensityLabel");
-  vecDensityLabel.innerHTML = (disp == "viewpaper" ? "Resolution:" : "Vector Density:");
+  vecDensityLabel.innerHTML = (disp == "viewpaper" ? "Resolution:" : "Densidad de los vectores:");
   var strengthLabel = document.getElementById("strengthLabel");
   strengthLabel.innerHTML = (disp.startsWith("parts")) ? "Particle Speed:" : "Brillo:";
   if (disp == "equip")
